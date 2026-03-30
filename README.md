@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/quisharness-banner.svg" alt="QuisHarness — The Opinionated Claude Code Framework" width="600">
+  <img src="assets/quisharness-banner.png" alt="QuisHarness — The Opinionated Claude Code Framework" width="600">
 </p>
 
 <p align="center">
