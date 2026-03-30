@@ -52,7 +52,7 @@ done
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 confirm() {
-  if [ "$AUTO_YES" = true ]; then return 0; fi
+  if [ "$AUTO_YES" = true ] || [ "$DRY_RUN" = true ]; then return 0; fi
   printf "%s [y/N] " "$1"
   read -r answer
   case "$answer" in
