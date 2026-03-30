@@ -1,12 +1,40 @@
-# QuisHarness
+<p align="center">
+  <img src="assets/quisharness-banner.png" alt="QuisHarness — The Opinionated Claude Code Framework" width="600">
+</p>
 
-An optimized `~/.claude/` framework that gets your Claude Code setup from default to elite in 5 minutes. Eval scripts, rule templates, hook architecture, skill patterns, and a setup wizard — no trial and error required.
+<p align="center">
+  <strong>The opinionated Claude Code framework — install once, eval always.</strong>
+</p>
 
-## What This Is
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://github.com/deserteaglemjAEC/QuisHarness/releases"><img src="https://img.shields.io/github/v/release/deserteaglemjAEC/QuisHarness" alt="Version"></a>
+  <a href="https://github.com/deserteaglemjAEC/QuisHarness/stargazers"><img src="https://img.shields.io/github/stars/deserteaglemjAEC/QuisHarness?style=social" alt="Stars"></a>
+</p>
 
-Most Claude Code users never go beyond the default `~/.claude/` directory. QuisHarness packages the patterns, rules, and eval scripts that emerged from systematic optimization research into an installable framework. It's not a plugin — it's the foundation your plugins sit on.
+<!-- TODO: Replace with actual demo GIF recorded via VHS/asciinema -->
+<!-- <p align="center"><img src="assets/demo.gif" alt="QuisHarness install and eval demo" width="600"></p> -->
 
-Read [How Claude Code Actually Works](docs/mental-model.md) for the mental model behind this framework.
+## Why QuisHarness?
+
+Most Claude Code setups are copy-paste from blog posts — no structure, no evaluation, no way to know if your config is actually good. QuisHarness gives you a tested, opinionated foundation with a built-in eval system to prove it works.
+
+- [Quick Start](#quick-start)
+- [What You Get](#what-you-get)
+- [Eval Your Setup](#eval-your-setup)
+- [How to Evaluate Plugins](#how-to-evaluate-plugins)
+- [Hook Architecture](#hook-architecture)
+- [FAQ](#faq)
+
+## What You Get
+
+| Benefit | Details |
+|---------|---------|
+| **30-second install** | One command sets up rules, hooks, skills, and templates |
+| **Built-in eval system** | Score your setup against 15+ assertions |
+| **Plugin evaluation** | Test any community plugin before trusting it |
+| **Battle-tested defaults** | 9 rules, 2 hook patterns, 3 skill examples |
+| **Safe and reversible** | Backups everything before touching your config |
 
 ## Before / After
 
@@ -47,7 +75,7 @@ The installer backs up your existing files, copies the framework, and shows your
 | **hooks/** | Memory context template + 2 examples | Hook architecture patterns |
 | **skills/examples/** | 3 skill patterns (trigger, evolved, rich) | Best practices for writing skills |
 | **output-styles/** | Brief output style | Response formatting preset |
-| **docs/** | 5 deep-dive documents | Mental model, hooks, evals, plugins, directory guide |
+| **docs/** | 9 deep-dive documents | Architecture, mental model, hooks, evals, plugins |
 
 ## Eval Your Setup
 
@@ -64,7 +92,7 @@ bash ~/.claude/scripts/eval-skill-activation.sh
 bash ~/.claude/scripts/eval-composite.sh
 ```
 
-A fresh install scores ~17-19/25 on the directory eval. The remaining points come from adding skills (via plugins) and configuring hooks. See [Eval Guide](docs/eval-guide.md) for details on each assertion and expected scores.
+A fresh install scores ~17-19/25 on the directory eval. The remaining points come from adding skills (via plugins) and configuring hooks. See [Eval Guide](docs/eval-guide.md) for details.
 
 ## How to Evaluate Plugins
 
@@ -80,8 +108,6 @@ Sweet spot: **10-25 plugins**. Read the full [Plugin Evaluation Framework](docs/
 
 ## Hook Architecture
 
-Hooks are scripts that run at specific points during a Claude Code session. QuisHarness includes templates for the most common patterns:
-
 | Hook Type | When It Fires | Example Use |
 |-----------|--------------|-------------|
 | SessionStart | Session begins/resumes | Inject project context |
@@ -94,28 +120,31 @@ See [Hook Patterns](docs/hook-patterns.md) for skeleton code and configuration e
 ## Prerequisites
 
 - **Claude Code CLI** installed ([claude.ai/code](https://claude.ai/code))
-- **Bash** — macOS users may need `brew install bash` for Bash 4+ (macOS ships 3.2)
+- **Bash 4+** — macOS users may need `brew install bash` (macOS ships 3.2)
 - **Python 3** — for hook templates (standard library only, no pip)
 
-## FAQ
+<details>
+<summary><strong>FAQ</strong></summary>
 
 **Is this a plugin?**
 No. QuisHarness is a framework — it installs templates, rules, and scripts to your `~/.claude/` directory. Plugins sit on top of this foundation.
 
 **Does it require SuperMemory?**
-No. The `memory-context.py` hook template shows a project-scoping pattern that works with any memory system. SuperMemory is one option; you can adapt it to whatever you use.
+No. The `memory-context.py` hook template shows a project-scoping pattern that works with any memory system.
 
 **Will it overwrite my settings.json?**
-No. The installer deliberately skips `settings.json` to avoid breaking your existing configuration. Review `templates/settings-example.json` and merge manually.
+No. The installer deliberately skips `settings.json`. Review `templates/settings-example.json` and merge manually.
 
 **Why doesn't install.sh copy hooks?**
-Hooks need customization for your specific projects and tools. The templates in `hooks/` are starting points — customize them, then copy to `~/.claude/hooks/`.
+Hooks need customization for your specific projects. The templates in `hooks/` are starting points.
 
 **How do I customize after installing?**
-Edit `~/.claude/CLAUDE.md` to add your project-specific rules. Add rule files to `~/.claude/rules/`. Customize hooks for your workflow. Run the eval scripts to measure your changes.
+Edit `~/.claude/CLAUDE.md`, add rule files to `~/.claude/rules/`, customize hooks, run eval scripts to measure changes.
 
 **What if I already have a configured setup?**
-Run `bash install.sh --dry-run` first to see what would change. The installer backs up existing files before overwriting anything.
+Run `bash install.sh --dry-run` first. The installer backs up existing files before overwriting.
+
+</details>
 
 ## Contributing
 
@@ -124,3 +153,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add rules, hook patterns, eval
 ## License
 
 MIT - see [LICENSE](LICENSE)
+
+---
+
+<p align="center">
+  <a href="https://star-history.com/#deserteaglemjAEC/QuisHarness&Date">
+    <img src="https://api.star-history.com/svg?repos=deserteaglemjAEC/QuisHarness&type=Date" alt="Star History Chart" width="500">
+  </a>
+</p>
