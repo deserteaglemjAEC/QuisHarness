@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check shell scripts
+        run: |
+          bash -n install.sh
+          bash -n scripts/eval-claude-directory.sh
+          bash -n scripts/eval-composite.sh
+          bash -n scripts/eval-skill-activation.sh
+          bash -n scripts/setup-check.sh
+
+      - name: Check Python syntax
+        run: |
+          python3 -m py_compile hooks/memory-context.py
+          python3 -m py_compile hooks/examples/prompt-improver.py
+
+      - name: Verify markdown links
+        run: |
+          # Check that linked files exist
+          for link in $(grep -roh '\[.*\]([^http][^)]*\.md)' README.md docs/*.md CONTRIBUTING.md 2>/dev/null | grep -o '([^)]*\.md)' | tr -d '()'); do
+            if [ ! -f "$link" ] && [ ! -f "docs/$link" ]; then
+              echo "BROKEN LINK: $link"
+              exit 1
+            fi
+          done
+          echo "All markdown links valid"
+
+      - name: Run repo optimization checks
+        run: bash scripts/verify-repo-optimization.sh .
