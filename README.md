@@ -12,8 +12,7 @@
   <a href="https://github.com/deserteaglemjAEC/QuisHarness/stargazers"><img src="https://img.shields.io/github/stars/deserteaglemjAEC/QuisHarness?style=social" alt="Stars"></a>
 </p>
 
-<!-- TODO: Replace placeholder with actual demo GIF recorded via VHS/asciinema -->
-![QuisHarness install and eval demo](assets/quisharness-banner.svg)
+![QuisHarness install and eval demo](assets/demo.svg)
 
 ## Why QuisHarness?
 
