@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/quisharness-banner.png" alt="QuisHarness — The Opinionated Claude Code Framework" width="600">
+  <img src="assets/quisharness-banner.svg" alt="QuisHarness — The Opinionated Claude Code Framework" width="600">
 </p>
 
 <p align="center">
@@ -12,8 +12,8 @@
   <a href="https://github.com/deserteaglemjAEC/QuisHarness/stargazers"><img src="https://img.shields.io/github/stars/deserteaglemjAEC/QuisHarness?style=social" alt="Stars"></a>
 </p>
 
-<!-- TODO: Replace with actual demo GIF recorded via VHS/asciinema -->
-<!-- <p align="center"><img src="assets/demo.gif" alt="QuisHarness install and eval demo" width="600"></p> -->
+<!-- TODO: Replace placeholder with actual demo GIF recorded via VHS/asciinema -->
+![QuisHarness install and eval demo](assets/quisharness-banner.svg)
 
 ## Why QuisHarness?
 
