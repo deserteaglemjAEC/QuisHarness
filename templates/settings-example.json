@@ -1,0 +1,16 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-settings.json",
+
+  "enabledPlugins": {},
+
+  "hooks": {
+    "SessionStart": [],
+    "PreToolUse": [],
+    "PostToolUse": [],
+    "UserPromptSubmit": []
+  },
+
+  "env": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}
