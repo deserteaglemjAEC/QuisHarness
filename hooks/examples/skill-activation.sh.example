@@ -1,0 +1,32 @@
+#!/bin/bash
+# skill-activation.sh.example — PATTERN: Wrapping a Node.js hook
+#
+# This is a DOCUMENTATION-ONLY example showing how to wrap a Node.js
+# hook script with PATH augmentation for non-interactive shells.
+#
+# WHY THIS PATTERN EXISTS:
+# When Claude Code runs hooks, it uses a non-interactive shell that may
+# not have /usr/local/bin or /opt/homebrew/bin in PATH. This wrapper
+# ensures Node.js (and other tools) are discoverable.
+#
+# THE KEY PATTERN:
+#   1. Export PATH with common binary locations
+#   2. Delegate to your actual hook script (JS, Python, etc.)
+#
+# TO USE THIS PATTERN:
+#   1. Write your hook logic in skill-activation.js (or .py)
+#   2. Copy this file as skill-activation.sh (remove .example)
+#   3. Update the final line to point to your script
+#   4. Configure in settings.json under the appropriate hook type
+#
+# NOTE: The referenced skill-activation.js is NOT included in QuisHarness.
+# It is project-specific. Write your own based on your skill activation needs.
+# See docs/hook-patterns.md for more hook architecture patterns.
+
+set -e
+
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
+# Replace with your actual hook script:
+# node "$HOME/.claude/hooks/skill-activation.js"
+echo "This is an example — replace with your hook script path"
